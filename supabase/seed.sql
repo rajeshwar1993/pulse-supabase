@@ -104,4 +104,19 @@ BEGIN
     'https://api.dicebear.com/7.x/bottts/svg?seed=e2e-user-b',
     'UTC'
   ) ON CONFLICT (id) DO NOTHING;
+
+  -- ========================================
+  -- CONNECTION SEATS (3 per user, 7-day expiry)
+  -- ========================================
+  -- Note: The create_seats_on_profile_insert trigger handles new profiles,
+  -- but seed runs after migrations so we insert explicitly for existing users.
+  INSERT INTO public.connection_seats (owner_id, seat_number, expires_at)
+  VALUES
+    (user_a_id, 1, NOW() + INTERVAL '7 days'),
+    (user_a_id, 2, NOW() + INTERVAL '7 days'),
+    (user_a_id, 3, NOW() + INTERVAL '7 days'),
+    (user_b_id, 1, NOW() + INTERVAL '7 days'),
+    (user_b_id, 2, NOW() + INTERVAL '7 days'),
+    (user_b_id, 3, NOW() + INTERVAL '7 days')
+  ON CONFLICT (owner_id, seat_number) DO NOTHING;
 END $$;
