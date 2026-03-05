@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Confirm your Pulse account</title>
+  <!--[if mso]>
+  <noscript>
+    <xml>
+      <o:OfficeDocumentSettings>
+        <o:PixelsPerInch>96</o:PixelsPerInch>
+      </o:OfficeDocumentSettings>
+    </xml>
+  </noscript>
+  <![endif]-->
+  <style>
+    /* Reset */
+    body, table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+    table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
+    img { -ms-interpolation-mode: bicubic; border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none; }
+    body { margin: 0; padding: 0; width: 100% !important; height: 100% !important; }
+
+    /* Dark mode support */
+    @media (prefers-color-scheme: dark) {
+      .email-bg { background-color: #1a1a2e !important; }
+      .card-bg { background-color: #16213e !important; }
+      .text-primary { color: #e0e0e0 !important; }
+      .text-secondary { color: #b0b0b0 !important; }
+      .divider { border-color: #2a2a4a !important; }
+    }
+
+    /* Mobile responsive */
+    @media only screen and (max-width: 600px) {
+      .container { width: 100% !important; padding: 16px !important; }
+      .card { padding: 28px 20px !important; }
+      .cta-button { width: 100% !important; }
+      .cta-button a { display: block !important; }
+    }
+  </style>
+</head>
+<body style="margin: 0; padding: 0; background-color: #f4f4f8; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+  <!-- Preview text (hidden) -->
+  <div style="display: none; max-height: 0; overflow: hidden;">
+    Welcome to Pulse! Confirm your email to get started.
+    &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847;
+  </div>
+
+  <table role="presentation" cellpadding="0" cellspacing="0" width="100%" class="email-bg" style="background-color: #f4f4f8;">
+    <tr>
+      <td align="center" style="padding: 40px 16px;">
+        <table role="presentation" cellpadding="0" cellspacing="0" width="560" class="container" style="max-width: 560px; width: 100%;">
+
+          <!-- Logo / Brand -->
+          <tr>
+            <td align="center" style="padding-bottom: 32px;">
+              <table role="presentation" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td style="font-size: 28px; font-weight: 700; color: #6C63FF; letter-spacing: -0.5px;">
+                    Pulse
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- Card -->
+          <tr>
+            <td class="card card-bg" style="background-color: #ffffff; border-radius: 12px; padding: 40px 36px; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);">
+              <table role="presentation" cellpadding="0" cellspacing="0" width="100%">
+
+                <!-- Heading -->
+                <tr>
+                  <td class="text-primary" style="font-size: 22px; font-weight: 700; color: #1a1a2e; padding-bottom: 12px;">
+                    Confirm your email
+                  </td>
+                </tr>
+
+                <!-- Body text -->
+                <tr>
+                  <td class="text-secondary" style="font-size: 15px; line-height: 24px; color: #555570; padding-bottom: 28px;">
+                    Thanks for signing up for Pulse! Click the button below to confirm your email address and activate your account.
+                  </td>
+                </tr>
+
+                <!-- CTA Button -->
+                <tr>
+                  <td align="center" style="padding-bottom: 28px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0" class="cta-button" style="min-width: 200px;">
+                      <tr>
+                        <td align="center" style="background-color: #6C63FF; border-radius: 8px;">
+                          <a href="{{ .ConfirmationURL }}" target="_blank" style="display: inline-block; padding: 14px 32px; font-size: 15px; font-weight: 600; color: #ffffff; text-decoration: none; border-radius: 8px;">
+                            Confirm Email Address
+                          </a>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+
+                <!-- Divider -->
+                <tr>
+                  <td style="padding-bottom: 20px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0" width="100%">
+                      <tr>
+                        <td class="divider" style="border-top: 1px solid #eeeef2; font-size: 0; line-height: 0;">&nbsp;</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+
+                <!-- Fallback link -->
+                <tr>
+                  <td class="text-secondary" style="font-size: 13px; line-height: 20px; color: #888899; padding-bottom: 0;">
+                    If the button doesn't work, copy and paste this link into your browser:
+                    <br>
+                    <a href="{{ .ConfirmationURL }}" style="color: #6C63FF; word-break: break-all;">{{ .ConfirmationURL }}</a>
+                  </td>
+                </tr>
+
+              </table>
+            </td>
+          </tr>
+
+          <!-- Footer -->
+          <tr>
+            <td align="center" style="padding-top: 28px;">
+              <table role="presentation" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td class="text-secondary" style="font-size: 12px; line-height: 18px; color: #999999; text-align: center;">
+                    You received this email because you signed up for Pulse.
+                    <br>
+                    If you didn't create an account, you can safely ignore this email.
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
